@@ -5,17 +5,17 @@ This is a small PHP project intended to spin up an apache server with PHP runnin
 ## Installation
 
 1. Install docker
-	a. https://docs.docker.com/docker-for-mac/install/
-	b. Get stable version
-	c. Navigate to applications and click Docker.app to start
-	d. Allow prompts, enter password, etc.
-	e. Should see docker logo in the menu bar, (takes a while to start & fairly cpu intensive)
+	* https://docs.docker.com/docker-for-mac/install/
+	* Get stable version
+	* Navigate to applications and click Docker.app to start
+	* Allow prompts, enter password, etc.
+	* Should see docker logo in the menu bar, (takes a while to start & fairly cpu intensive)
 2. Download this repo, (if not already done) and navigate to it
 3. Once docker is finished, you can execute the following command in 'Terminal' to startup the server
-    a. Start Terminal (generally Applications/Terminal.app)
-    b. Navigate to this directory (usually something like `cd ~/Workspaces/php-project`)
-	c. `docker-compose up --build --force-recreate && docker-compose down`
-	d. The above will spit out a lot of details, but should eventually get to something like:
+    * Start Terminal (generally Applications/Terminal.app)
+    * Navigate to this directory (usually something like `cd ~/Workspaces/php-project`)
+	* `docker-compose up --build --force-recreate && docker-compose down`
+	* The above will spit out a lot of details, but should eventually get to something like:
 ```
 Successfully built b99e192dd46f
 Successfully tagged php-project_php-apache:latest
