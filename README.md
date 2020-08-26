@@ -2,6 +2,8 @@
 
 This is a small PHP project intended to spin up an apache server with PHP running on it. There's a few test PHP routes, but the primary purpose was to demonstrate a Postgres connection. The assumption is that the server should be run via docker and the database is hosted on your local machine.
 
+![Running localhost](https://github.com/tyltot/php-test/blob/master/docs/running-app-example.png)
+
 ## Installation
 
 1. Install docker
@@ -10,12 +12,14 @@ This is a small PHP project intended to spin up an apache server with PHP runnin
 	* Navigate to applications and click Docker.app to start
 	* Allow prompts, enter password, etc.
 	* Should see docker logo in the menu bar, (takes a while to start & fairly cpu intensive)
+	* ![Running docker](https://github.com/tyltot/php-test/blob/master/docs/docker-desktop-running.png)
 2. Download this repo, (if not already done) and navigate to it
-3. Once docker is finished, you can execute the following command in 'Terminal' to startup the server
+3. Once docker is finished, start 'Terminal'
     * Start Terminal (generally Applications/Terminal.app)
     * Navigate to this directory (usually something like `cd ~/Workspaces/php-project`)
-	* `docker-compose up --build --force-recreate && docker-compose down`
-	* The above will spit out a lot of details, but should eventually get to something like:
+4. Execute the following to start the server
+    * `docker-compose up --build --force-recreate && docker-compose down`
+    * The above will spit out a lot of details, but should eventually get to something like:
 ```
 Successfully built b99e192dd46f
 Successfully tagged php-project_php-apache:latest
@@ -26,12 +30,12 @@ php-apache_1  | AH00558: apache2: Could not reliably determine the server's full
 php-apache_1  | [Wed Aug 26 04:21:13.901794 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.9 configured -- resuming normal operations
 php-apache_1  | [Wed Aug 26 04:21:13.902063 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
 ```
-4. The server is now live @ http://localhost. Any changes made to the `.php` files in the `/html` directory will reflect in the browser after they are saved. Current available paths are:
+5. The server is now live @ http://localhost. Any changes made to the `.php` files in the `/html` directory will reflect in the browser after they are saved. Current available paths are:
 	* http://localhost (this connects to the pg database and runs a basic query, corresponding to `html/index.php`)
 	* http://localhost/hello.php (good ole hello world, corresponding to `html/hello.php`)
 	* http://localhost/pg_connect.php (test the postgres connection, corresponding to `html/pg_connect.php`)
 	* http://localhost/phpinfo.php (craps out the php info, corresponding to `html/phpinfo.php`)
-5. After all is said and done, you should be able to `Ctl-C` to kill the server
+6. After all is said and done, you should be able to `Ctl-C` to kill the server
 
 ## Misc
 Helpful docker commands:
